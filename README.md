@@ -1,65 +1,68 @@
 # ÖDEV-1 CEVAPLARI
 
 1. film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
-   
-`SELECT title, description FROM film;`
+   `SELECT title, description FROM film;`
 
-3. film tablosunda bulunan tüm sütunlardaki verileri film uzunluğu (length) 60 dan büyük VE 75 ten küçük olma koşullarıyla sıralayınız. 
-`SELECT * FROM film WHERE length > 60 AND length < 75;`
+2. film tablosunda bulunan tüm sütunlardaki verileri film uzunluğu (length) 60 dan büyük VE 75 ten küçük olma koşullarıyla sıralayınız.
+   `SELECT * FROM film WHERE length > 60 AND length < 75;`
 
-4. film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99 VE replacement_cost 12.99 VEYA 28.99 olma koşullarıyla sıralayınız.
-`SELECT * FROM film WHERE rental_rate = 0.99 AND (replacement_cost = 12.99 OR replacement_cost = 28.99);`
+3. film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99 VE replacement_cost 12.99 VEYA 28.99 olma koşullarıyla sıralayınız.
+   `SELECT * FROM film WHERE rental_rate = 0.99 AND (replacement_cost = 12.99 OR replacement_cost = 28.99);`
 
-5. customer tablosunda bulunan first_name sütunundaki değeri 'Mary' olan müşterinin last_name sütunundaki değeri nedir? 
-`SELECT last_name FROM customer WHERE first_name ='Mary';`
+4. customer tablosunda bulunan first_name sütunundaki değeri 'Mary' olan müşterinin last_name sütunundaki değeri nedir?
+   `SELECT last_name FROM customer WHERE first_name ='Mary';`
 
-6. film tablosundaki uzunluğu(length) 50 ten büyük OLMAYIP aynı zamanda rental_rate değeri 2.99 veya 4.99 OLMAYAN verileri sıralayınız. 
+5. film tablosundaki uzunluğu(length) 50 ten büyük OLMAYIP aynı zamanda rental_rate değeri 2.99 veya 4.99 OLMAYAN verileri sıralayınız. 
 5.1:
-`SELECT * FROM film WHERE length <= 50 AND rental_rate NOT IN (2.99,4.99);`
-5.2: 
-`SELECT * FROM film WHERE length <= 50 AND rental_rate NOT BETWEEN 2.99 AND 4.99;`
+   `SELECT * FROM film WHERE length <= 50 AND rental_rate NOT IN (2.99,4.99);`
+5.2:
+   `SELECT * FROM film WHERE length <= 50 AND rental_rate NOT BETWEEN 2.99 AND 4.99;`
+   
 ---
 
 # ÖDEV-2 CEVAPLARI
 
 1. film tablosunda bulunan tüm sütunlardaki verileri replacement cost değeri 12.99 dan büyük eşit ve 16.99 küçük olma koşuluyla sıralayınız ( BETWEEN - AND yapısını kullanınız.)
-`SELECT * FROM film WHERE replacement_cost BETWEEN 12.99 AND 16.99;`
+   `SELECT * FROM film WHERE replacement_cost BETWEEN 12.99 AND 16.99;`
 
 2. actor tablosunda bulunan first_name ve last_name sütunlardaki verileri first_name 'Penelope' veya 'Nick' veya 'Ed' değerleri olması koşuluyla sıralayınız. ( IN operatörünü kullanınız.)
-`SELECT first_name, last_name FROM actor WHERE first_name IN ('Penelope','Nick','Ed');`
+   `SELECT first_name, last_name FROM actor WHERE first_name IN ('Penelope','Nick','Ed');`
 
 3. film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99, 2.99, 4.99 VE replacement_cost 12.99, 15.99, 28.99 olma koşullarıyla sıralayınız. ( IN operatörünü kullanınız.)
-`SELECT * FROM film WHERE rental_rate IN (0.99,2.99,4.99) AND replacement_cost IN (12.99,15.99,28.99);`
+   `SELECT * FROM film WHERE rental_rate IN (0.99,2.99,4.99) AND replacement_cost IN (12.99,15.99,28.99);`
+   
 ---
 
 # ÖDEV-3 CEVAPLARI 
 
 1. country tablosunda bulunan country sütunundaki ülke isimlerinden 'A' karakteri ile başlayıp 'a' karakteri ile sonlananları sıralayınız.
-`SELECT * FROM country WHERE country LIKE 'A%a';`
+   `SELECT * FROM country WHERE country LIKE 'A%a';`
 
 2. country tablosunda bulunan country sütunundaki ülke isimlerinden en az 6 karakterden oluşan ve sonu 'n' karakteri ile sonlananları sıralayınız.
-`SELECT * FROM country WHERE country ILIKE '______%n';`
+   `SELECT * FROM country WHERE country ILIKE '______%n';`
 
 3. film tablosunda bulunan title sütunundaki film isimlerinden en az 4 adet büyük ya da küçük harf farketmesizin 'T' karakteri içeren film isimlerini sıralayınız.
-`SELECT * FROM film WHERE title ILIKE '%t%t%t%t%';`
+   `SELECT * FROM film WHERE title ILIKE '%t%t%t%t%';`
 
 4. film tablosunda bulunan tüm sütunlardaki verilerden title 'C' karakteri ile başlayan ve uzunluğu (length) 90 dan büyük olan ve rental_rate 2.99 olan verileri sıralayınız.
-`SELECT * FROM film WHERE title ILIKE 'C%' AND length > 90 AND rental_rate = 2.99;`
+   `SELECT * FROM film WHERE title ILIKE 'C%' AND length > 90 AND rental_rate = 2.99;`
+   
 ---
 
 # ÖDEV-4 CEVAPLARI
  
 1. film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
-`SELECT DISTINCT replacement_cost FROM film;`
+   `SELECT DISTINCT replacement_cost FROM film;`
 
 2. film tablosunda bulunan replacement_cost sütununda birbirinden farklı kaç tane veri vardır?
-`SELECT COUNT (DISTINCT replacement_cost) FROM film;`
+   `SELECT COUNT (DISTINCT replacement_cost) FROM film;`
 
 3. film tablosunda bulunan film isimlerinde (title) kaç tanesini T karakteri ile başlar ve aynı zamanda rating 'G' ye eşittir?
-`SELECT * FROM film WHERE title ILIKE 'T%' AND rating = 'G';`
-4. country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?
-`SELECT * FROM country WHERE country ILIKE '_____';`
+   `SELECT * FROM film WHERE title ILIKE 'T%' AND rating = 'G';`
+   
+5. country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?
+   `SELECT * FROM country WHERE country ILIKE '_____';`
 
-5. city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
-`SELECT COUNT (city) FROM city WHERE city ILIKE '%r';`
+6. city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
+    `SELECT COUNT (city) FROM city WHERE city ILIKE '%r';`
 
