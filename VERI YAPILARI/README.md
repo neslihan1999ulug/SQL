@@ -74,6 +74,8 @@ MERGE SORT
 [16,21,11,8,12,22] -> Merge Sort
 
 Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
+
+
          [16,21,11,8,12,22]
 [16,21,11]----------------[8,12,22]
 [16,21]-[11]------------[8,12]-[22]
@@ -83,6 +85,7 @@ Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
          [8,11,12,16,21,22]
 Big-O gösterimini yazınız.
 O(nlogn)-->O(6log6) 
+
 
 # PROJE -3  CEVAPLARI
 BINARY SEARCH TREE
@@ -94,9 +97,12 @@ Root’tan küçük değere sahip olan node’lar Root’un sol tarafında yer a
 Root’tan büyük değere sahip olan node’lar Root’un sağ tarafında yer alacak.
 
  Sorgu root 6'dır. root'un sağında 7 bulunur. Solunda 5 bulunur 
+
+ 
                    [6]
               [5]        [7]
           [4]     [1]        [8]
       [3]            [0]         [9]
   [2]
+  
 Binary Serch Tree yukarıdaki gibidir.
